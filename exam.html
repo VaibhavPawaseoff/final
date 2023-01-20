@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myclass{
+            margin-top:20% ;
+            margin-left:20% ;
+            margin-right:50% ;
+            margin-bottom:20% ;
+            border: 2px solid black;
+            background-color: skyblue;
+        }
+        .myc{
+            margin-top:20% ;
+            margin-left:20% ;
+            margin-right:50% ;
+            margin-bottom:20% ;
+            border: 2px solid black;
+            background-color: skyblue;
+        }
+    </style>
+    <script>
+        var arr=[{name:"mahi",address:"nhjuytg",hobbies:"badminton"},{name:"bhavna",address:"nhjuytgkk",hobbies:"football"},{name:"shubham",address:"nhjuytgkl",hobbies:"dancing"}]
+function adddata(){
+    alert("hello");
+    var name=document.getElementById("nm1").value;
+  var m= checkname(name);
+  if(m){
+    var address=document.getElementById("nm2").value;
+    var hobbies=document.getElementById("nm3").value;
+    ob={name,address,hobbies};
+    alert("to check");
+    document.getElementById("nm1").value="";
+    document.getElementById("nm2").value="";
+    document.getElementById("nm3").value="";
+    alert("to check");
+   arr.push(ob);
+    
+    
+
+  }
+
+}
+function checkname(name){
+    alert("hii");
+var len=name.length;
+alert(len);
+if(len>6){
+    alert("Name should be less than 6 characters");
+    return false;
+
+}
+else{
+    return true ;
+}
+}
+function display(){
+  //  var name=document.getElementById("nm1").value;
+   // var address=document.getElementById("nm2").value;
+   // var hobbies=document.getElementById("nm3").value;
+  //  ob={name,address,hobbies}
+ // var str="";
+  for(var ob of arr){
+    document.getElementById("two").innerHTML+=`${ob.name},${ob.address},${ob.hobbies}<br>`;
+}
+}
+   
+function displaydata(){
+    document.getElementById("one").classList.remove("myclass");
+    document.getElementById("one").classList.add("myc");
+    display();
+
+
+
+}
+function change(){
+    document.getElementById("nm1").setAttribute("style","background-color:yellow");
+}
+function fun1(){
+    document.getElementById("nm1").setAttribute("style","background-color:white");
+}
+
+
+function colorChange(){
+
+}
+
+    </script>
+    <style>
+    .myclass{
+background-color: lightseagreen;
+    }
+    .myc{
+        background-color:lightseagreen;
+    }
+</style>
+</head>
+<body>
+<div  id="one" class="myclass" onmouseover="colorChange()"><br>
+  Name:  <input type="text" name="nm" id="nm1" onfocus="change()" onblur="fun1()"><br><br>
+  Address:  <input type="text" name="nmm" id="nm2"><br><br>
+  Hobbies:  <input type="text" name="nmmm" id="nm3"><br><br><br>
+  
+  
+  <button type="button" name="btn" id="btn1" onclick="adddata()">Add object</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="button" name="btnn" id="btn2" onclick="displaydata()">Display object</button>
+  <div id="two">
+
+  </div>
+</div>
+
+</body>
+</html>
+// javascript code for color change on mouse hover?
